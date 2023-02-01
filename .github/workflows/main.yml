@@ -1,0 +1,22 @@
+import os
+import pandas as pd
+
+def organize_data(url):
+    # carrega todos os arquivos .xlsx na pasta
+    files = [file for file in os.listdir(url) if file.endswith('.xlsx')]
+
+    # inicializa um dataframe vazio para armazenar as informações
+    df = pd.DataFrame(columns=['Serviço', 'vlr Total'])
+
+    # itera por cada arquivo e adiciona as informações à tabela
+    for file in files:
+        data = pd.read_excel(os.path.join(url, file))
+        df = df.append(data[['Serviço', 'vlr Total']], ignore_index=True)
+
+    return df
+
+# chama a função e salva o resultado em uma variável
+result = organize_data("https://drive.google.com/drive/folders/1U9ioSVBFqWmDRSoLPHEf-mAJlVn_Wcqs?usp=share_link")
+
+# imprime o resultado
+print(result)
