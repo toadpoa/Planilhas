@@ -1,0 +1,16 @@
+import os
+import pandas as pd
+
+path = '/workspaces/Planilhas/Relatórios/'
+files = [f for f in os.listdir(path) if f.endswith('.xlsx')]
+
+df_list = []
+for file in files:
+    df = pd.read_excel(os.path.join(path, file), sheet_name=1)
+    df = df.iloc[2:20,:]
+    df['Arquivo'] = file
+    df_list.append(df)
+
+final_df = pd.concat(df_list)
+final_df.to_excel("resultado_final.xlsx", index=False)
+print(final_df)

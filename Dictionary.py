@@ -1,0 +1,20 @@
+Dictionary = {
+"Suporte local a hardware e software - estação com garantia": "Local hardware and software support - station with warranty",
+"Suporte local a hardware e software - estação sem garantia": "Local hardware and software support - station without warranty",
+"Suporte a impressoras": "Printer support",
+"Administração de Correio Eletrônico (e-mail)": "Email administration",
+"Administração e Manutenção de Câmeras de Videomonitoramento - indoor": "Indoor Video Surveillance Camera Administration and Maintenance",
+"Administração e Manutenção de Câmeras de Videomonitoramento - Outdoor": "Outdoor Video Surveillance Camera Administration and Maintenance",
+"Administração e Manutenção de Rádio Wi-Fi - indoor": "Indoor Wi-Fi Radio Administration and Maintenance",
+"Administração e Manutenção de Rádio Wi-Fi - outdoor": "Outdoor Wi-Fi Radio Administration and Maintenance",
+"Suporte e manutenção de Terminal de Radiocomunicação Digital": "Digital Radio Communication Terminal Support and Maintenance",
+"Administração e Manutenção da Rede de Radiocomunicação Digital": "Digital Radio Communication Network Administration and Maintenance",
+"Gestão da Rede Infovia": "Infovia Network Management",
+"Administração e Manutenção de Redes Locais": "Local Network Administration and Maintenance",
+"Disponibilização de Servidor Computacional": "Computational Server Availability",
+"Disponibilização de Servidor de Arquivos": "File Server Availability",
+"Hospedagem de Aplicação e Armazenamento de Dados - Sistemas": "Application Hosting and Data Storage - Systems",
+"Gestão e operação da Rede Digital de Telefonia Municipal (RDTM)": "Management and Operation of the Municipal Digital Telephony Network (RDTM)",
+"Suporte técnico a evento sazonal": "Seasonal event technical support",
+"Consultoria de Infraestrutura, Outro (informar)": "Infrastructure Consulting, Other (provide information)"
+}

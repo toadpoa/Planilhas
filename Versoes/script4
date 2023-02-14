@@ -1,0 +1,23 @@
+import pandas as pd
+import os
+
+# Diretório com arquivos .xlsx
+path = '/workspaces/Planilhas/Relatórios/'
+
+# Lista para armazenar as tabelas
+tables = []
+
+# Loop para ler cada arquivo .xlsx na pasta
+for filename in os.listdir(path):
+    if filename.endswith(".xlsx"):
+        file = pd.read_excel(os.path.join(path, filename), sheet_name=1)
+        # Selecionar linhas 2 a 20
+        table = file.iloc[2:20, :]
+        tables.append(table)
+
+# Concatenar todas as tabelas em uma só
+result = pd.concat(tables)
+
+# Salvar a nova tabela em um arquivo .xlsx
+result.to_excel("resultado_final.xlsx", index=False)
+print(result)

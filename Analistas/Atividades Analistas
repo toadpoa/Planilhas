@@ -1,0 +1,29 @@
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+# Carrega a planilha de categorias
+categorias = pd.read_excel('/workspaces/Planilhas/Analistas/Categorias.xlsx', 
+                           sheet_name='Plan2')
+
+# Carrega a planilha de analistas
+analistas = pd.read_excel('/workspaces/Planilhas/Analistas/Analistas.xlsx', 
+                          sheet_name='Sheet1')
+
+# Cria um vetor de features a partir do detalhe das categorias
+vectorizer = CountVectorizer()
+features = vectorizer.fit_transform(categorias['Detalhe'].values)
+
+# Treina o modelo de classificação
+model = MultinomialNB()
+model.fit(features, categorias['Categoria2'].values)
+
+# Cria as features a partir do detalhe dos analistas
+features_analistas = vectorizer.transform(analistas['Detalhe'].values)
+
+# Aplica o modelo de classificação
+analistas['Nova categoria'] = model.predict(features_analistas)
+
+# Salva a planilha de analistas com a nova categoria
+analistas.to_excel('/workspaces/Planilhas/Analistas/Analistas_classificados2.xlsx', 
+                   index=False)
